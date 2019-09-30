@@ -1,0 +1,1609 @@
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitConsole: Configure: console using file "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/console-MTMR-PSM1-MTML-PSM2-Teleop.json"
+----> content of configuration file: 
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+	"arms" : 
+	[
+		{
+			"io" : "sawRobotIO1394-PSM1-28323-calibrated_offset.xml",
+			"kinematic" : "../psm-large-needle-driver.json",
+			"name" : "PSM1",
+			"pid" : "../sawControllersPID-PSM.xml",
+			"type" : "PSM"
+		},
+		{
+			"io" : "sawRobotIO1394-PSM2-31000-calibrated.xml",
+			"kinematic" : "../psm-large-needle-driver.json",
+			"name" : "PSM2",
+			"pid" : "../sawControllersPID-PSM.xml",
+			"type" : "PSM"
+		},
+		{
+			"io" : "sawRobotIO1394-MTMR-32036-footpedal.xml-new",
+			"kinematic" : "../mtm.json",
+			"name" : "MTMR",
+			"pid" : "../sawControllersPID-MTMR.xml",
+			"type" : "MTM"
+		},
+		{
+			"io" : "sawRobotIO1394-MTML-31976-calibrated.xml-new",
+			"kinematic" : "../mtm.json",
+			"name" : "MTML",
+			"pid" : "../sawControllersPID-MTML.xml",
+			"type" : "MTM"
+		}
+	],
+	"io" : 
+	{
+		"firewire-protocol" : "broadcast-read-write",
+		"footpedals" : "footpedal.xml"
+	},
+	"psm-teleops" : 
+	[
+		{
+			"configure-parameter" : 
+			{
+				"rotation" : 
+				[
+					[
+						-1,
+						0,
+						0
+					],
+					[
+						0,
+						-1,
+						0
+					],
+					[
+						0,
+						0,
+						1
+					]
+				]
+			},
+			"master" : "MTMR",
+			"period" : 0.0050000000000000001, // in seconds
+			"slave" : "PSM1"
+		},
+		{
+			"configure-parameter" : 
+			{
+				"rotation" : 
+				[
+					[
+						-1,
+						0,
+						0
+					],
+					[
+						0,
+						-1,
+						0
+					],
+					[
+						0,
+						0,
+						1
+					]
+				]
+			},
+			"master" : "MTML",
+			"period" : 0.0050000000000000001, // in seconds
+			"slave" : "PSM2"
+		}
+	]
+}
+<----
+M- Class mtsIntuitiveResearchKitConsole: Configure:
+     - Period IO is 0.0003
+     - FireWire port is 0
+     - Protocol is 2
+     - Watchdog timeout is 0.03
+FirewirePort::Init: number of ports = 1
+FirewirePort::Init: successfully initialized port 0
+FirewirePort::Init: successfully disabled cycle start packet
+FirewirePort::ScanNodes: base node id = ffc0
+FirewirePort::ScanNodes: building node map for 9 nodes:
+  Node 0, BoardId = 7, Firmware Version = 6
+  Node 1, BoardId = 6, Firmware Version = 6
+  Node 2, BoardId = 9, Firmware Version = 6
+  Node 3, BoardId = 8, Firmware Version = 6
+  Node 4, BoardId = 3, Firmware Version = 6
+  Node 5, BoardId = 2, Firmware Version = 6
+  Node 6, BoardId = 1, Firmware Version = 6
+  Node 7, BoardId = 0, Firmware Version = 6
+FirewirePort::ScanNodes: all nodes broadcast capable and support shorter wait
+System running with broadcast query, read, and write
+M- Class mtsIntuitiveResearchKitConsole: Configure: configuring IO using "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/sawRobotIO1394-MTML-31976-calibrated.xml-new"
+W- mtsRobot1394::SetBoards: MTML, board: 0, Id: 0, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+W- mtsRobot1394::SetBoards: MTML, board: 1, Id: 1, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+M- Class mtsIntuitiveResearchKitConsole: Configure: configuring IO using "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/sawRobotIO1394-MTMR-32036-footpedal.xml-new"
+W- mtsRobot1394::SetBoards: MTMR, board: 0, Id: 2, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+W- mtsRobot1394::SetBoards: MTMR, board: 1, Id: 3, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+M- Class mtsIntuitiveResearchKitConsole: Configure: configuring IO using "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/sawRobotIO1394-PSM1-28323-calibrated_offset.xml"
+W- mtsRobot1394::SetBoards: PSM1, board: 0, Id: 6, firmware: 6, FPGA serial: 5496-14, QLA serial: 5495-14
+W- mtsRobot1394::SetBoards: PSM1, board: 1, Id: 7, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+M- Class mtsIntuitiveResearchKitConsole: Configure: configuring IO using "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/sawRobotIO1394-PSM2-31000-calibrated.xml"
+W- mtsRobot1394::SetBoards: PSM2, board: 0, Id: 8, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+W- mtsRobot1394::SetBoards: PSM2, board: 1, Id: 9, firmware: 6, FPGA serial: unknown, QLA serial: unknown
+M- Class mtsIntuitiveResearchKitConsole: Configure: configuring IO foot pedals using "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/footpedal.xml"
+D- Class mtsIntuitiveResearchKitMTM: AddStateTable: added state table "State" and corresponding interface "StateTableState" to task "MTML"
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #1: MTML: desired state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitMTM: Configure: MTML using file "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/../mtm.json"
+----> content of configuration file: 
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+	// see dVRK user guide
+	"DH" : 
+	{
+		"links" : 
+		[
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 1
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0.27939999999999998,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 0,
+				// 2
+				"convention" : "standard",
+				"cx" : -0.14999999999999999,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0.10000000000000001,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0.36449999999999999,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : -1.5708,
+				// 3
+				"convention" : "standard",
+				"cx" : -0.14999999999999999,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0.029999999999999999,
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0.15060000000000001,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 4
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : -0.14999999999999999,
+				"cz" : -0.14999999999999999,
+				"mass" : 0.050000000000000003,
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : -1.5708,
+				// 5
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0.029999999999999999,
+				"cz" : 0.029999999999999999,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 6
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : -0.02,
+				"cz" : 0.02,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 0,
+				// 7
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			}
+		]
+	}
+}
+<----
+M- Class mtsIntuitiveResearchKitMTM: Configure MTML:
+----------------------------------------------------
+ Warning:
+   To take advantage of the MTM CUHK gravity compensation
+   you should have a "arm" file for each MTM in the console
+   file.  The arm file should contain the fields
+   "kinematic" and "gravity-compensation".
+----------------------------------------------------
+M- Class mtsIntuitiveResearchKitMTM: ConfigureDH MTML: loaded kinematics
+STANDARD DH       1.5708            0            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH            0       0.2794            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH      -1.5708       0.3645            0            0         hinge active        1.5708            0            0            0
+STANDARD DH       1.5708            0            0       0.1506         hinge active             0            0            0            0
+STANDARD DH      -1.5708            0            0            0         hinge active             0            0            0            0
+STANDARD DH       1.5708            0            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH            0            0            0            0         hinge active        1.5708            0            0            0
+
+D- Class mtsIntuitiveResearchKitMTM: AddStateTable: added state table "State" and corresponding interface "StateTableState" to task "MTMR"
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #1: MTMR: desired state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitMTM: Configure: MTMR using file "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/../mtm.json"
+----> content of configuration file: 
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+	// see dVRK user guide
+	"DH" : 
+	{
+		"links" : 
+		[
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 1
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0.27939999999999998,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 0,
+				// 2
+				"convention" : "standard",
+				"cx" : -0.14999999999999999,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0.10000000000000001,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0.36449999999999999,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : -1.5708,
+				// 3
+				"convention" : "standard",
+				"cx" : -0.14999999999999999,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0.029999999999999999,
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0.15060000000000001,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 4
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : -0.14999999999999999,
+				"cz" : -0.14999999999999999,
+				"mass" : 0.050000000000000003,
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : -1.5708,
+				// 5
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0.029999999999999999,
+				"cz" : 0.029999999999999999,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 1.5708,
+				// 6
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : -0.02,
+				"cz" : 0.02,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"Ixx" : 0.0001,
+				"Iyy" : 0.0001,
+				"Izz" : 0.0001,
+				"alpha" : 0,
+				// 7
+				"convention" : "standard",
+				"cx" : 0,
+				"cy" : 0,
+				"cz" : 0,
+				"mass" : 0,
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute",
+				"x1" : 1,
+				"x2" : 0,
+				"x3" : 0,
+				"y1" : 0,
+				"y2" : 1,
+				"y3" : 0,
+				"z1" : 0,
+				"z2" : 0,
+				"z3" : 1
+			}
+		]
+	}
+}
+<----
+M- Class mtsIntuitiveResearchKitMTM: Configure MTMR:
+----------------------------------------------------
+ Warning:
+   To take advantage of the MTM CUHK gravity compensation
+   you should have a "arm" file for each MTM in the console
+   file.  The arm file should contain the fields
+   "kinematic" and "gravity-compensation".
+----------------------------------------------------
+M- Class mtsIntuitiveResearchKitMTM: ConfigureDH MTMR: loaded kinematics
+STANDARD DH       1.5708            0            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH            0       0.2794            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH      -1.5708       0.3645            0            0         hinge active        1.5708            0            0            0
+STANDARD DH       1.5708            0            0       0.1506         hinge active             0            0            0            0
+STANDARD DH      -1.5708            0            0            0         hinge active             0            0            0            0
+STANDARD DH       1.5708            0            0            0         hinge active       -1.5708            0            0            0
+STANDARD DH            0            0            0            0         hinge active        1.5708            0            0            0
+
+D- Class mtsIntuitiveResearchKitPSM: AddStateTable: added state table "State" and corresponding interface "StateTableState" to task "PSM1"
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #1: PSM1: desired state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitPSM: Configure: PSM1 using file "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/../psm-large-needle-driver.json"
+----> content of configuration file: 
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+	// see dVRK user guide
+	"DH" : 
+	{
+		"links" : 
+		[
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : 1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : 1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -0.43180000000000002,
+				"theta" : 0,
+				"type" : "prismatic"
+			},
+			{
+				"A" : 0,
+				"D" : 0.41620000000000001,
+				"alpha" : 0,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0.0091000000000000004,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			}
+		]
+	},
+	// values from the dVRK user guide, see tool appendix C
+	"coupling" : 
+	{
+		"ActuatorToJointPosition" : 
+		[
+			[
+				1,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				-1.5631999999999999,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				1.0185999999999999,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				-0.8306,
+				0.6089,
+				0.6089
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				-1.2177,
+				1.2177
+			]
+		]
+	},
+	// angles used to engage the tool, in degrees or millimeters
+	// make sure these are within the range of motion IN the cannula
+	"tool-engage-position" : 
+	{
+		"lower" : 
+		[
+			0,
+			0,
+			0,
+			-270,
+			-15,
+			15,
+			0
+		],
+		"upper" : 
+		[
+			0,
+			0,
+			0,
+			270,
+			15,
+			-15,
+			0
+		]
+	},
+	// values from dVRK user guide, converted to degrees or millimeters and floored (closest degree).
+	// see PSM calibration for first 3 joints
+	// see tool appendix for last 4 joints
+	// for last joint, manual says [0, 30] but we need -20 to allow stronger torque, 80 to open wide
+	"tool-joint-limit" : 
+	{
+		"lower" : 
+		[
+			-91,
+			-53,
+			0,
+			-260,
+			-80,
+			-80,
+			-20
+		],
+		"upper" : 
+		[
+			91,
+			53,
+			240,
+			260,
+			80,
+			80,
+			80
+		]
+	},
+	// values from dVRK user guide
+	// see PSM hardware for first 3 joints, motor torque * gear ratio
+	// see tool appendix for last 4 joints
+	"tool-torque-limit" : 
+	{
+		"lower" : 
+		[
+			-4.9699999999999998,
+			-4.9699999999999998,
+			-14.81,
+			-0.33000000000000002,
+			-0.25,
+			-0.20000000000000001,
+			-0.16
+		],
+		"upper" : 
+		[
+			4.9699999999999998,
+			4.9699999999999998,
+			14.81,
+			0.33000000000000002,
+			0.25,
+			0.20000000000000001,
+			0.16
+		]
+	},
+	// rotation to match ISI convention (for read-only research API on commercial da Vinci)
+	"tooltip-offset" : 
+	[
+		[
+			0,
+			-1,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			1,
+			0
+		],
+		[
+			-1,
+			0,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			0,
+			1
+		]
+	]
+}
+// ,
+// "homing-zero-position": 1 // or 0 for false
+<----
+M- Class mtsIntuitiveResearchKitPSM: ConfigureDH PSM1: loaded kinematics
+    MODIFIED DH    1.5708         0         0         0         hinge active        1.5708            0            0            0
+    MODIFIED DH   -1.5708         0         0         0         hinge active       -1.5708            0            0            0
+    MODIFIED DH    1.5708         0         0         0        slider active       -0.4318            0            0            0
+    MODIFIED DH         0         0         0    0.4162         hinge active             0            0            0            0
+    MODIFIED DH   -1.5708         0         0         0         hinge active       -1.5708            0            0            0
+    MODIFIED DH   -1.5708    0.0091         0         0         hinge active       -1.5708            0            0            0
+
+D- Class mtsIntuitiveResearchKitPSM: AddStateTable: added state table "State" and corresponding interface "StateTableState" to task "PSM2"
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #1: PSM2: desired state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitPSM: Configure: PSM2 using file "/home/hwangmh/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/ucb-dVRK/../psm-large-needle-driver.json"
+----> content of configuration file: 
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+	// see dVRK user guide
+	"DH" : 
+	{
+		"links" : 
+		[
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : 1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : 1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : 1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -0.43180000000000002,
+				"theta" : 0,
+				"type" : "prismatic"
+			},
+			{
+				"A" : 0,
+				"D" : 0.41620000000000001,
+				"alpha" : 0,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : 0,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			},
+			{
+				"A" : 0.0091000000000000004,
+				"D" : 0,
+				"alpha" : -1.5708,
+				"convention" : "modified",
+				"mode" : "active",
+				"offset" : -1.5708,
+				"theta" : 0,
+				"type" : "revolute"
+			}
+		]
+	},
+	// values from the dVRK user guide, see tool appendix C
+	"coupling" : 
+	{
+		"ActuatorToJointPosition" : 
+		[
+			[
+				1,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				-1.5631999999999999,
+				0,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				1.0185999999999999,
+				0,
+				0
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				-0.8306,
+				0.6089,
+				0.6089
+			],
+			[
+				0,
+				0,
+				0,
+				0,
+				0,
+				-1.2177,
+				1.2177
+			]
+		]
+	},
+	// angles used to engage the tool, in degrees or millimeters
+	// make sure these are within the range of motion IN the cannula
+	"tool-engage-position" : 
+	{
+		"lower" : 
+		[
+			0,
+			0,
+			0,
+			-270,
+			-15,
+			15,
+			0
+		],
+		"upper" : 
+		[
+			0,
+			0,
+			0,
+			270,
+			15,
+			-15,
+			0
+		]
+	},
+	// values from dVRK user guide, converted to degrees or millimeters and floored (closest degree).
+	// see PSM calibration for first 3 joints
+	// see tool appendix for last 4 joints
+	// for last joint, manual says [0, 30] but we need -20 to allow stronger torque, 80 to open wide
+	"tool-joint-limit" : 
+	{
+		"lower" : 
+		[
+			-91,
+			-53,
+			0,
+			-260,
+			-80,
+			-80,
+			-20
+		],
+		"upper" : 
+		[
+			91,
+			53,
+			240,
+			260,
+			80,
+			80,
+			80
+		]
+	},
+	// values from dVRK user guide
+	// see PSM hardware for first 3 joints, motor torque * gear ratio
+	// see tool appendix for last 4 joints
+	"tool-torque-limit" : 
+	{
+		"lower" : 
+		[
+			-4.9699999999999998,
+			-4.9699999999999998,
+			-14.81,
+			-0.33000000000000002,
+			-0.25,
+			-0.20000000000000001,
+			-0.16
+		],
+		"upper" : 
+		[
+			4.9699999999999998,
+			4.9699999999999998,
+			14.81,
+			0.33000000000000002,
+			0.25,
+			0.20000000000000001,
+			0.16
+		]
+	},
+	// rotation to match ISI convention (for read-only research API on commercial da Vinci)
+	"tooltip-offset" : 
+	[
+		[
+			0,
+			-1,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			1,
+			0
+		],
+		[
+			-1,
+			0,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			0,
+			1
+		]
+	]
+}
+// ,
+// "homing-zero-position": 1 // or 0 for false
+<----
+M- Class mtsIntuitiveResearchKitPSM: ConfigureDH PSM2: loaded kinematics
+    MODIFIED DH    1.5708         0         0         0         hinge active        1.5708            0            0            0
+    MODIFIED DH   -1.5708         0         0         0         hinge active       -1.5708            0            0            0
+    MODIFIED DH    1.5708         0         0         0        slider active       -0.4318            0            0            0
+    MODIFIED DH         0         0         0    0.4162         hinge active             0            0            0            0
+    MODIFIED DH   -1.5708         0         0         0         hinge active       -1.5708            0            0            0
+    MODIFIED DH   -1.5708    0.0091         0         0         hinge active       -1.5708            0            0            0
+
+W- Class mtsIntuitiveResearchKitConsole: ConfigurePSMTeleopJSON: keyword "master" is deprecated, use "mtm" instead
+W- Class mtsIntuitiveResearchKitConsole: ConfigurePSMTeleopJSON: keyword "slave" is deprecated, use "psm" instead
+W- Class mtsIntuitiveResearchKitConsole: ConfigurePSMTeleopJSON: keyword "master" is deprecated, use "mtm" instead
+W- Class mtsIntuitiveResearchKitConsole: ConfigurePSMTeleopJSON: keyword "slave" is deprecated, use "psm" instead
+M- Class mtsIntuitiveResearchKitArmQtWidget: Configure: 
+M- Class mtsIntuitiveResearchKitArmQtWidget: Configure: 
+M- Class mtsIntuitiveResearchKitArmQtWidget: Configure: 
+M- Class mtsIntuitiveResearchKitArmQtWidget: Configure: 
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+-M Class mtsIntuitiveResearchKitMTM: RemoveInterfaceRequired: removed required interface "ExecIn"
+M- Class mtsIntuitiveResearchKitMTM: Create: creating thread for task MTML
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitArmQtWidget: Create: default create method for component "MTML-GUI"
+M- osaThread::CreateInternal: create thread named: Unnamed
+-M Class mtsIntuitiveResearchKitMTM: RemoveInterfaceRequired: removed required interface "ExecIn"
+M- Class mtsIntuitiveResearchKitMTM: Create: creating thread for task MTMR
+M- osaThread::CreateInternal: create thread named: Unnamed
+ Class mtsIntuitiveResearchKitMTM: Starting StartupInternal (periodic) for MTML
+M- Class mtsIntuitiveResearchKitMTM: StartupInternal: started for task "MTML"
+ Class mtsIntuitiveResearchKitArmQtWidget: Create: default create method for component "MTMR-GUI"
+M-M- osaThread::CreateInternal: create thread named: Unnamed
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #2: MTML: desired state UNINITIALIZED
+ Class mtsIntuitiveResearchKitMTM: Starting StartupInternal (periodic) for MTMR
+M- Class mtsIntuitiveResearchKitMTM: StartupInternal: started for task "MTMR"
+-M Class mtsIntuitiveResearchKitPSM: RemoveInterfaceRequired: removed required interface "ExecIn"
+-M Class M-mtsIntuitiveResearchKitMTM: MTMR:RobotmtsIntuitiveResearchKitPSM: : Create: creating thread for task PSM1
+1.56987e+09s, #2: MTMR: desired state UNINITIALIZED
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitArmQtWidget: Create: default create method for component "PSM1-GUI"
+M--M Class mtsIntuitiveResearchKitPSM: RemoveInterfaceRequired: removed required interface "ExecIn"
+M- Class mtsIntuitiveResearchKitPSM: Create: creating thread for task PSM2
+ Class mtsIntuitiveResearchKitPSM: Starting StartupInternal (periodic) for PSM1M- osaThread::CreateInternal: create thread named: Unnamed
+ Class mtsIntuitiveResearchKitPSM: Starting StartupInternal (periodic) for PSM1M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitPSM: StartupInternal: started for task "PSM1"
+M- Class mtsIntuitiveResearchKitArmQtWidget: Create: default create method for component "PSM2-GUI"
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #2: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #2: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: RemoveInterfaceRequired: removed required interface "ExecIn"
+M- Class mtsIntuitiveResearchKitConsole: Create: creating thread for task console
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: Create: default create method for component "consoleGUI"
+M-M- osaThread::CreateInternal: create thread named: Unnamed
+
+
+M- Class mtsIntuitiveResearchKitConsole: StartupInternal: started for task "console"
+IntuitiveResearchKitConsole": 
+RunInternal: begin task consoleM- Class mtsIntuitiveResearchKitConsole: StartupInternal: started for task "console"
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #1: console started, dVRK 1.7.0 / cisst 1.0.11
+M-M- osaThread::CreateInternal: create thread named: Unnamed
+ Class mtsIntuitiveResearchKitPSM: Starting StartupInternal (periodic) for PSM2
+M- Class mtsIntuitiveResearchKitPSM: StartupInternal: started for task "PSM2"
+M- Class mtsIntuitiveResearchKitPSM: StartupInternal: started for task "PSM2"
+M- Class mtsIntuitiveResearchKitConsole: StartupInternal: ended for task "console"
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #2: PSM2: desired state UNINITIALIZED
+M- osaThread::CreateInternal: create thread named: Unnamed
+"
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitPSM: StartupInternal: ended for task "PSM2"
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- osaThread::CreateInternal: create thread named: Unnamed
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "MTML-GUI" for state "mtsComponentState
+  State:ready" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "MTMR-GUI" for state "mtsComponentState
+  State:ready" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "PSM1-GUI" for state "mtsComponentState
+  State:ready" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "PSM2-GUI" for state "mtsComponentState
+  State:ready" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: WaitForState: called for component "consoleGUI" for state "mtsComponentState
+  State:ready" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitMTM: Start: starting task MTML
+M- Class mtsIntuitiveResearchKitMTM: Start: started task MTML
+M- Class mtsIntuitiveResearchKitArmQtWidget: Start: default start method for component "MTML-GUI"
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #3: MTML: current state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitMTM: Start: starting task MTMR
+M- Class mtsIntuitiveResearchKitMTM: Start: started task MTMR
+M- Class mtsIntuitiveResearchKitArmQtWidget: Start: default start method for component "MTMR-GUI"
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #3: MTMR: current state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitPSM: Start: starting task PSM1
+M- Class mtsIntuitiveResearchKitPSM: Start: started task PSM1
+M- Class mtsIntuitiveResearchKitArmQtWidget: Start: default start method for component "PSM1-GUI"
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #3: PSM1: current state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitPSM: Start: starting task PSM2
+M- Class mtsIntuitiveResearchKitPSM: Start: started task PSM2
+M- Class mtsIntuitiveResearchKitArmQtWidget: Start: default start method for component "PSM2-GUI"
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #3: PSM2: current state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: wait to start task "console"
+M- Class mtsIntuitiveResearchKitConsole: Start: starting task console
+M- Class mtsIntuitiveResearchKitConsole: Start: started task console
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: Start: default start method for component "consoleGUI"
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: mtsIntuitiveResearchKitConsoleQtWidget::Startup
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #2: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #3: MTML: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #4: MTML-PSM2: current state is DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #5: MTMR: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #6: MTMR: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #7: MTMR-PSM1: current state is DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #8: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #9: PSM1: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #10: PSM2: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #11: PSM2: current state UNINITIALIZED
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "MTML-GUI" for state "mtsComponentState
+  State:active" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "MTMR-GUI" for state "mtsComponentState
+  State:active" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "PSM1-GUI" for state "mtsComponentState
+  State:active" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "PSM2-GUI" for state "mtsComponentState
+  State:active" has no effect for mtsComponent
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: WaitForState: called for component "consoleGUI" for state "mtsComponentState
+  State:active" has no effect for mtsComponent
+-M Class mtsIntuitiveResearchKitPSMsoleQtWidget: WaitForState: MTMR:RobotPSM2:Robot: : 1.56987e+09s, #4a:  "PSM2: desired state READY:active" has no effect fo
+-M Class mtsIntuitiveResearchKitPSMsoleQtWidget: WaitForState: MTMR:RobotPSM2:Robot: : 1.56987e+09s, #4a:  "PSM2: desired state READY:active" has no effect fo
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09-M #TM4: PSM1: desired state READY Class 
+mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #4: MTML: desired state READY1.56987e+09s, #12: MTMR: desired state READY
+
+1.56987e+09s, #4: MTML: desired state READY1.56987e+09s, #12: MTMR: desired state READY
+
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #13: PSM1: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #14: PSM2: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #15: MTML: desired state READY
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #5: PSM2: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #-M5:  Class mtsIntuitiveResearchKitConsole: console:Main: 
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #-M5:  Class mtsIntuitiveResearchKitConsole: console:Main: 
+1.56987e+09s, #16: PSM2: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #17: MTMR: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #5: PSM1: current state CALIBRATING_ENCODERS_FROM_POTS
+1.56987e+09s, #5: MTML: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #18: PSM1: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #19: MTML: current state CALIBRATING_ENCODERS_FROM_POTS
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #20: MTML-PSM2: set desired state to DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #21: MTMR-PSM1: set desired state to DISABLED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #6: MTMR: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #22: MTMR: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #7: MTMR: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #23: MTMR: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #8: MTMR: current state POWERING
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #24: MTMR: current state POWERING
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #9: MTMR: power requested
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #25: MTMR: power requested
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #6: PSM2: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #26: PSM2: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #26: PSM2: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #7: PSM2: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: -M1.56987e+09s, #8 Class mtsIntuitiveResearchKitConsole70PSM2: current state POWERING: console:Main: 
+
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #9: PSM2: power requested
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #28: PSM2: current state POWERING
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #29: PSM2: power requested
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #6: MTML: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #30: MTML: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #7: MTML: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #6: PSM1: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #31: MTML: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #8: MTML: current state POWERING
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #32: MTML: current state POWERING
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #9: MTML: power requested
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #33: MTML: power requested
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #7: PSM1: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #34: PSM1: encoders biased using 1970 potentiometer values
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #8: PSM1: current state POWERING
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #35: PSM1: current state ENCODERS_BIASED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #9: PSM1: power requested
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #36: PSM1: current state POWERING
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #37: PSM1: power requested
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #38: IO: MTMR watchdog ok
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #39: IO: PSM2 watchdog ok
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #40: IO: MTML watchdog ok
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #41: IO: PSM1 watchdog ok
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #10: MTML: power on
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #42: MTML: power on
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #11: MTML: current state POWERED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #43: MTML: current state POWERED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #12: MTML: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #44: MTML: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #13: MTML: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #45: MTML: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #10: MTMR: power on
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #46: MTMR: power on
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #11: MTMR: current state POWERED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #47: MTMR: current state POWERED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #12: MTMR: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #48: MTMR: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #13: MTMR: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #49: MTMR: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #10: PSM2: power on
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #50: PSM2: power on
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #50: PSM2: power on
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #11: PSM2: current state POWERED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #51: PSM2: current state POWERED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #12: PSM2: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #52: PSM2: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #13: PSM2: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #53: PSM2: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #14: PSM2: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #54: PSM2: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #15: PSM2: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #55: PSM2: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #16: PSM2: current state CHANGING_COUPLING_ADAPTER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #56: PSM2: current state CHANGING_COUPLING_ADAPTER
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #17: PSM2: current state ENGAGING_ADAPTER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #57: PSM2: current state ENGAGING_ADAPTER
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #18: PSM2: current state ADAPTER_ENGAGED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #58: PSM2: current state ADAPTER_ENGAGED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #19: PSM2: current state CHANGING_COUPLING_TOOL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #59: PSM2: current state CHANGING_COUPLING_TOOL
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #20: PSM2: current state TOOL_ENGAGED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #60: PSM2: current state TOOL_ENGAGED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #21: PSM2: current state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #61: PSM2: current state READY
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #10: PSM1: power on
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #62: PSM1: power on
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #11: PSM1: current state POWERED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #63: PSM1: current state POWERED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #12: PSM1: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #64: PSM1: current state HOMING_ARM
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #13: PSM1: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #65: PSM1: control JOINT_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #14: PSM1: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #66: PSM1: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #15: PSM1: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #67: PSM1: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #16: PSM1: current state CHANGING_COUPLING_ADAPTER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #68: PSM1: current state CHANGING_COUPLING_ADAPTER
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #17: PSM1: current state ENGAGING_ADAPTER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #69: PSM1: current state ENGAGING_ADAPTER
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #18: PSM1: current state ADAPTER_ENGAGED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #70: PSM1: current state ADAPTER_ENGAGED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #19: PSM1: current state CHANGING_COUPLING_TOOL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #71: PSM1: current state CHANGING_COUPLING_TOOL
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #20: PSM1: current state TOOL_ENGAGED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #72: PSM1: current state TOOL_ENGAGED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #21: PSM1: current state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #73: PSM1: current state READY
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #14: MTML: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #74: MTML: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #15: MTML: current state CALIBRATING_ROLL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #75: MTML: current state CALIBRATING_ROLL
+: 1.56987e+09s, #16: MTML: looking for roll lower limit
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #76: MTML: looking for roll lower limit
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #14: MTMR: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #77: MTMR: current state ARM_HOMED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #15: MTMR: current state CALIBRATING_ROLL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #78: MTMR: current state CALIBRATING_ROLL
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #16: MTMR: looking for roll lower limit
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #79: MTMR: looking for roll lower limit
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #17: MTML: found roll lower limit
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #80: MTML: found roll lower limit
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #18: MTML: current state ROLL_CALIBRATED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #81: MTML: current state ROLL_CALIBRATED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #19: MTML: current state HOMING_ROLL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #82: MTML: current state HOMING_ROLL
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #20: MTML: moving roll to center
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #83: MTML: moving roll to center
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #17: MTMR: found roll lower limit
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #84: MTMR: found roll lower limit
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #18: MTMR: current state ROLL_CALIBRATED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #85: MTMR: current state ROLL_CALIBRATED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #19: MTMR: current state HOMING_ROLL
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #86: MTMR: current state HOMING_ROLL
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #20: MTMR: moving roll to center
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #87: MTMR: moving roll to center
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #21: MTML: current state RESETTING_ROLL_ENCODER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #88: MTML: current state RESETTING_ROLL_ENCODER
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #22: MTML: current state ROLL_ENCODER_RESET
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #89: MTML: current state ROLL_ENCODER_RESET
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #23: MTML: current state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: -M Class mtsIntuitiveResearchKitMTM: MTML:Robot1.56987e+09: s, #90: MTML: current state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: -M Class mtsIntuitiveResearchKitMTM: MTML:Robot1.56987e+09: s, #90: MTML: current state READY
+1.56987e+09s, #24: MTML: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #91: MTML: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #21: MTMR: current state RESETTING_ROLL_ENCODER
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #92: MTMR: current state RESETTING_ROLL_ENCODER
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #22: MTMR: current state ROLL_ENCODER_RESET
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #93: MTMR: current state ROLL_ENCODER_RESET
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #23: MTMR: current state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #94: MTMR: current state READY
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #24: MTMR: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #95: MTMR: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #25: MTMR: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #96: MTMR: desired state READY
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #26: MTMR: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #97: MTMR: control JOINT_SPACE/POSITION_MODE
+1.56987e+09s, #25: MTML: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #98: MTML: desired state READY
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #26: MTML: control JOINT_SPACE/POSITION_MODE-M
+: PSM1: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #99: MTML: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #100: PSM1: desired state READY
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #22: PSM2: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #101: PSM2: desired state READY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #102: MTMR-PSM1: set desired state to DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #103: MTMR-PSM1: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #104: MTMR-PSM1: current state is SETTING_ARMS_STATE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #105: MTML-PSM2: set desired state to DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #106: MTML-PSM2: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #107: MTML-PSM2: current state is SETTING_ARMS_STATE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #108: MTMR-PSM1: current state is ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #109: MTML-PSM2: current state is ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #27: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #110: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #27: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #111: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #112: console: operator present
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #28: MTMR: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #113: MTMR: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #28: MTML: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #114: MTMR-PSM1: set desired state to ENABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #115: MTML: control JOINT_SPACE/POSITION_MODE
+-W-W Class MTMR-PSM1:Setting: 1.56987e+09s, #1-M Class mtsIntuitiveResearchKitConsole: console:Main: : 1.56987e+09s, #116: MTML-PSM2: set desired state to ENABLED
+MTMR-PSM1: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #1: MTMR-PSM1: unable to match gripper/jaw angle, pinch and release the gripper
+ Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #1: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #2: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #29: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #117: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #29: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #118: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #119: MTMR-PSM1: current state is ENABLED
+-M C Class sIntuitmtsIntuitiveResearchKitPSMsole:Main: 1.56987e+09s, #: : MTMR:RobotPSM1:Robot: : 1.56987e+09s, #23_M: : PSM1: control CARTESIAN_SPACE/POSITION_MODEMTMR: control CARTESIAN_SPACE/EFFORT_MODE
+
+-M C Class sIntuitmtsIntuitiveResearchKitPSMsole:Main: 1.56987e+09s, #: : MTMR:RobotPSM1:Robot: : 1.56987e+09s, #23_M: : PSM1: control CARTESIAN_SPACE/POSITION_MODEMTMR: control CARTESIAN_SPACE/EFFORT_MODE
+
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #120: MTMR: control CARTESIAN_SPACE/EFFORT_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #31: MTMR: effort cartesian WRENCH_BODY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #121: MTMR: effort cartesian WRENCH_BODY
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #122: PSM1: control CARTESIAN_SPACE/POSITION_MODE
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #2: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #3: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #3: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #4: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #4: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #5: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #5: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #6: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #6: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #7: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #7: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #8: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #8: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #9: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitPSM: PSM1:Robot: -W1.56987e+09s, #1: PSM1: PID position limit
+PSM1-PID:Controller: 1.56987e+09s, #1: PSM1-PID: position limit, mask (1 for limit):            0            0            0            0            0            0            1
+-W Class mtsIntuitiveResearchKitConsole: console:Main: -W Class mtsPID: PSM1-PID: position limit, mask (1 for limit):            0            0            0            0            0            0            1, 
+ requested: 1.56987e+09s, #10: PSM1: PID position limit
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #11: PSM1-PID: position limit, mask (1 for limit):            0            0            0            0            0            0            1
+    0.619130     0.354705     0.162033    -0.618629     0.693750     -1.01622    -0.349066, 
+ lower limits:     -1.58825    -0.925025      0.00000     -4.53786     -1.39626     -1.39626    -0.349066, 
+ upper limits:      1.58825     0.925025     0.240000      4.53786      1.39626      1.39626      1.39626
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #9: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #12: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #10: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #13: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #11: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #14: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #12: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #15: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #13: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #16: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #14: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #17: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #123: console: operator not present
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #124: MTMR-PSM1: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #125: MTMR-PSM1: current state is ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #32: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #126: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #127: MTML-PSM2: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #128: console: operator present
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #33: MTMR: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #30: MTML: control JOINT_SPACE/POSITION_MODE
+LI Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #129: MTMR: control JOINT_SPACE/POSITION_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #130: MTMR-PSM1: set desired state to ENABLED
+-W Class mtsTeleOperationPSM-W Class mtsTeleOperationPSM: -M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #131: MTML: control JOINT_SPACE/POSITION_MODE
+MTML-PSM2:Setting: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #132: MTML-PSM2: set desired state to ENABLED
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #18: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+: MTMR-PSM1:Setting: 1.56987e+09s, #2: MTMR-PSM1: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #19: MTMR-PSM1: unable to match gripper/jaw angle, pinch and release the gripper
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #31: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #133: MTML: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #34: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #134: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #135: MTMR-PSM1: current state is ENABLED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #35: MTMR: control CARTESIAN_SPACE/EFFORT_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #136: MTMR: control CARTESIAN_SPACE/EFFORT_MODE
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #16: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #20: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #17: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #21: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #18: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #22: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #19: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #23: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #20: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #24: MTML-PSM2: unable to match gripper/jaw angle, pinch and release the gripper
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #137: console: operator not present
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #138: MTMR-PSM1: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #139: MTML-PSM2: set desired state to ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #140: MTMR-PSM1: current state is ALIGNING_MTM
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #36: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #141: MTMR: control CARTESIAN_SPACE/TRAJECTORY_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09s, #32: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #24: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #24: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #142: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #24: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #142: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #37: MTMR: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #24: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #142: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #37: MTMR: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #23: PSM2: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #143: MTMR: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #144: PSM1: desired state UNINITIALIZED
+1.56987e+09s, #33: MTML: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #145: PSM2: desired state UNINITIALIZED
+1.56987e+09s, #25: PSM1: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #146: MTML: control UNDEFINED_SPACE/UNDEFINED_MODE
+ Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #38: MTMR: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #147: MTMR: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #148: PSM1: control UNDEFINED_SPACE/UNDEFINED_MODE
+-M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #39: MTMR: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #149: MTMR: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: 1.56987e+09-Ms, #34 Class : MTML: current state UNINITIALIZEDINED_MODE
+-MntuitiveResear: PSM1:Robot
+: -M Class mtsIntuitiveResearchKitPSM: PSM2:Robot: 1.56987e+09s, #24: PSM2: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #150: PSM1: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #151: PSM2: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #152: MTML: current state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #153: MTMR-PSM1: set desired state to DISABLED
+-W Class mtsTeleOperationPSM: MTMR-PSM1:Setting: 1.56987e+09s, #3: MTMR-PSM1: PSM state has changed to [UNINITIALIZED]
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #25: MTMR-PSM1: PSM state has changed to [UNINITIALIZED]
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #154: MTMR-PSM1: current state is DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #155: MTML-PSM2: set desired state to DISABLED
+-W Class mtsTeleOperationPSM: MTML-PSM2:Setting: 1.56987e+09s, #21: MTML-PSM2: PSM state has changed to [UNINITIALIZED]
+-W Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #26: MTML-PSM2: PSM state has changed to [UNINITIALIZED]
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #156: MTML-PSM2: current state is DISABLED
+-M Class mtsIntuitiveResearchKitPSM: PSM1:Robot: 1.56987e+09s, #27: PSM1: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitMTM: MTML:Robot: -M Class mtsIntuitiveResearchKitMTM: MTMR:Robot: 1.56987e+09s, #35: MTML: desired state UNINITIALIZED
+1.56987e+09 Class  Class mtsIntuitiveResearchKitConsolebot: -M Class mtsIntuitive: : PSM2:Robotconsole:Main: : 56987e+09s, #35: MTML: desired state UNINITIALIZED
+1.56987e+09s, #40: MTMR: desired state UNINITIALIZED
+1.56987e+09s, #157: PSM1: desired state UNINITIALIZED
+1.56987e+09s, #1.56987e+09s, #157: PSM1: desired state UNINITIALIZED
+1.56987e+09s, #25: PSM2: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #158: PSM2: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #159: MTML: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #160: MTMR: desired state UNINITIALIZED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #161: MTMR-PSM1: set desired state to DISABLED
+-M Class mtsIntuitiveResearchKitConsole: console:Main: 1.56987e+09s, #162: MTML-PSM2: set desired state to DISABLED
+M- Class mtsIntuitiveResearchKitMTM: Kill: task "MTML", current state "mtsComponentState
+  State:active"
+-W Class mtsIntuitiveResearchKitMTM: End of task MTML
+M- Class mtsIntuitiveResearchKitMTM: MTML: Cleanup
+M- Class mtsIntuitiveResearchKitArmQtWidget: Kill: default kill method for component "MTML-GUI"
+M- Class mtsIntuitiveResearchKitMTMM- Class mtsIntuitiveResearchKitArmQtWidget: Kill: default kill method for component "MTML-GUI"
+M- Class mtsIntuitiveResearchKitMTM: CleanupInternal: ended for task "MTML"
+M- Class mtsIntuitiveResearchKitMTM: Kill: task "MTMR", current state "mtsComponentState
+  State:active"
+M- Class mtsIntuitiveResearchKitArmQtWidget: Kill: default kill method for component "MTMR-GUI"
+M- Class mtsIntuitiveResearchKitPSM: Kill: task "PSM1", current state "mtsComponentState
+  State:active"
+M- Class mtsIntuitiveResearchKitArmQtWidget: Kill: default kill method for component "PSM1-GUI"
+M- Class mtsIntuitiveResearchKitPSM: Kill: task "PSM2", current state "mtsComponentState
+  State:active"
+M- Class mtsIntuitiveResearchKitArmQtWidget: Kill: default kill method for component "PSM2-GUI"
+M- Class mtsIntuitiveResearchKitConsole: Kill: task "console", current state "mtsComponentState
+  State:active"
+M- Class mtsIntuitiveResearchKitConsole: Kill: task "console", current state "mtsComponentState
+  State:active"
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: Kill: default kill method for component "consoleGUI"
+M- Class mtsIntuitiveResearchKitConsoleQtWidget: mtsIntuitiveResearchKitConsoleQtWidget::Cleanup
+M- Class mtsIntuitiveResearchKitConsole: RunInternal: end of task "console"
+M- Class mtsIntuitiveResearchKitConsole: Cleanup
+M- Class mtsIntuitiveResearchKitArmQtWidget: WaitForState: called for component "MTML-GUI" for state "mtsComponentState
+  State:finished" has no effect for mtsComponent
+: CleanupInternal: ended for task "console"
+-W Class mtsIntuitiveResearchKitPSM: End of task PSM2
+M- Class mtsIntuitiveResearchKitPSM: PSM2: Cleanup
+M- Class mtsIntuitiveResearchKitPSM: CleanupInternal: ended for task "PSM2"
+-W Class mtsTeleOperationPSM: -W-WEnd of task  Class -W Class mtsIntuitiveResearchKitMTM: End of task MTMR
+MTML-PSM2M- Class mtsIntuitiveResearchKitMTM: MTMR: Cleanup
+mtsROSBridge: End of task sawIntuitiveResearchKitdvrk_spin
+ Class mtsTeleOperationPSM: End of task MTMR-PSM1
+ Class mtsTeleOperationPSM: End of task MTMR-PSM1
+-W Class M- Class mtsIntuitiveResearchKitMTM: CleanupInternal: ended for task "MTMR"
+mtsIntuitiveResearchKitPSM: End of task PSM1
+-W Class M- Class mtsIntuitiveResearchKitMTM: CleanupInternal: ended for task "MTMR"
+mtsIntuitiveResearchKitPSM: End of task PSM1
+: PSM1: Cleanup
+M- Class mtsIntuitiveResearchKitPSM: CleanupInternal: ended for task "PSM1"
+-W Class mtsROSBridge: End of task dVRKIOBridgePSM2
+-W Class mtsRobotIO1394: End of task io
+-W Class mtsROSBridge: End of task dVRKIOBridgePSM1
+-W Class mtsROSBridge: End of task sawIntuitiveResearchKitdvrk
+-W Class mtsROSBridge: End of task sawIntuitiveResearchKitdvrk_tf2
+-W Class mtsROSBridge: End of task sawIntuitiveResearchKitdvrk_stats
+E- Class mtsManagerLocal: File: mtsManagerLocal.cpp Line: 2044 -  WaitForStateAll: component "MTML-PID" failed to reach state "mtsComponentState
+  State:finished"
+E- Class mtsManagerLocal: File: mtsManagerLocal.cpp Line: 2052 -  WaitForStateAll: timed out while waiting for state "mtsComponentState
+  State:finished"
+E- Class mtsManagerLocal: File: mtsManagerLocal.cpp Line: 2061 -  WaitForStateAll: failed to reached state "mtsComponentState
+  State:finished" for all components
+M- Class cmnClassRegister: SetLogMaskClassAll: log mask has been set to "  " for the following classes: cmnBool, cmnChar, cmnCommandLineOptions, cmnDeSerializer, cmnDouble, cmnInt, cmnLoggerQtWidget, cmnLong, cmnLongLong, cmnPath, cmnSerializer, cmnShort, cmnUChar, cmnUInt, cmnULong, cmnULongLong, cmnUShort, cmnXMLPath, dvrk_topics_versionProxy, mtsBool, mtsBool1, mtsBool2, mtsBool3, mtsBool4, mtsBool5, mtsBool6, mtsBoolMat, mtsBoolVec, mtsChar, mtsChar1, mtsChar2, mtsChar3, mtsChar4, mtsChar5, mtsChar6, mtsCharMat, mtsCharVec, mtsCollectorEvent, mtsCollectorFactory, mtsCollectorQtComponent, mtsCollectorQtFactory, mtsCollectorState, mtsComponent, mtsComponentAddLatency, mtsComponentConstructorNameAndDouble, mtsComponentConstructorNameAndInt, mtsComponentConstructorNameAndLong, mtsComponentConstructorNameAndString, mtsComponentConstructorNameAndUInt, mtsComponentConstructorNameAndULong, mtsComponentStateChangeProxy, mtsComponentStateProxy, mtsComponentStatusControlProxy, mtsComponentViewer, mtsConnection, mtsDaVinciEndoscopeFocus, mtsDaVinciHeadSensor, mtsDescriptionComponentClassProxy, mtsDescriptionComponentClassVecProxy, mtsDescriptionComponentProxy, mtsDescriptionConnectionProxy, mtsDescriptionConnectionVecProxy, mtsDescriptionInterfaceProxy, mtsDescriptionLoadLibraryProxy, mtsDouble, mtsDouble1, mtsDouble2, mtsDouble3, mtsDouble4, mtsDouble5, mtsDouble6, mtsDoubleAnRot2, mtsDoubleAxAnRot3, mtsDoubleFrm4x4, mtsDoubleMat, mtsDoubleMatFrm3, mtsDoubleMatRot2, mtsDoubleMatRot3, mtsDoubleQuat, mtsDoubleQuatFrm3, mtsDoubleQuatRot3, mtsDoubleRodRot3, mtsDoubleVec, mtsEndUserInterfaceArgProxy, mtsEventHandlerList, mtsExecutionResultProxy, mtsFloat, mtsFloat1, mtsFloat2, mtsFloat3, mtsFloat4, mtsFloat5, mtsFloat6, mtsFloatAnRot2, mtsFloatAxAnRot3, mtsFloatFrm4x4, mtsFloatMat, mtsFloatMatFrm3, mtsFloatMatRot2, mtsFloatMatRot3, mtsFloatQuat, mtsFloatQuatFrm3, mtsFloatQuatRot3, mtsFloatRodRot3, mtsFloatVec, mtsInt, mtsInt1, mtsInt2, mtsInt3, mtsInt4, mtsInt5, mtsInt6, mtsIntMat, mtsIntVec, mtsInterfaceProvided, mtsInterfaceProvidedDescriptionProxy, mtsInterfaceRequired, mtsInterfaceRequiredDescriptionProxy, mtsIntervalStatistics, mtsIntervalStatisticsQtWidgetComponent, mtsIntuitiveResearchKitArm, mtsIntuitiveResearchKitArmQtWidget, mtsIntuitiveResearchKitArmTypesProxy, mtsIntuitiveResearchKitConsole, mtsIntuitiveResearchKitConsoleQt, mtsIntuitiveResearchKitConsoleQtWidget, mtsIntuitiveResearchKitECM, mtsIntuitiveResearchKitMTM, mtsIntuitiveResearchKitPSM, mtsIntuitiveResearchKitSUJ, mtsIntuitiveResearchKitSUJQtWidget, mtsIntuitiveResearchKitUDPStreamer, mtsLogMessage, mtsLong, mtsLongLong, mtsLongMat, mtsLongVec, mtsManagerComponentBase, mtsManagerComponentClient, mtsManagerComponentServer, mtsManagerComponentServices, mtsManagerGlobal, mtsManagerGlobalInterface, mtsManagerLocal, mtsManagerLocalInterface, mtsMessageProxy, mtsMessageQtWidgetComponent, mtsPID, mtsPIDQtWidget, mtsPSMCompensation, mtsQtApplication, mtsQtApplicationConstructorArg, mtsQtWidgetBoolRead, mtsQtWidgetBoolVecRead, mtsQtWidgetBoolVecWrite, mtsQtWidgetBoolWrite, mtsQtWidgetComponent, mtsQtWidgetDoubleRead, mtsQtWidgetDoubleVecRead, mtsQtWidgetDoubleVecWrite, mtsQtWidgetDoubleWrite, mtsQtWidgetEvent, mtsQtWidgetFunction, mtsQtWidgetIntRead, mtsQtWidgetIntWrite, mtsQtWidgetInterfaceRequired, mtsQtWidgetStateIndexRead, mtsQtWidgetStateIndexWrite, mtsQtWidgetStdStringRead, mtsQtWidgetStdStringWrite, mtsROSBridge, mtsRobotIO1394, mtsRobotIO1394QtWidget, mtsRobotIO1394QtWidgetFactory, mtsShort, mtsShortMat, mtsShortVec, mtsSocketBaseQtWidget, mtsSocketClientPSM, mtsSocketProxyClient, mtsSocketProxyClientConstructorArg, mtsSocketProxyInitData, mtsSocketProxyServer, mtsSocketProxyServerConstructorArg, mtsSocketServerPSM, mtsStateIndex, mtsStateTable, mtsStateTableIndexRange, mtsStdCharVecProxy, mtsStdDoubleVecProxy, mtsStdString, mtsStdStringVec, mtsStdStringVecProxy, mtsStdVct3VecProxy, mtsSystemQtWidgetComponent, mtsTask, mtsTaskConstructorArg, mtsTaskConstructorArgProxy, mtsTaskContinuous, mtsTaskContinuousConstructorArg, mtsTaskContinuousConstructorArgProxy, mtsTaskFromCallback, mtsTaskFromCallbackAdapter, mtsTaskFromSignal, mtsTaskMain, mtsTaskPeriodic, mtsTaskPeriodicConstructorArg, mtsTaskPeriodicConstructorArgProxy, mtsTeleOperation, mtsTeleOperationECM, mtsTeleOperationECMQtWidget, mtsTeleOperationPSM, mtsTeleOperationPSMQtWidget, mtsTeleOperationQtWidget, mtsTextToSpeech, mtsUChar, mtsUChar1, mtsUChar2, mtsUChar3, mtsUChar4, mtsUChar5, mtsUChar6, mtsUCharMat, mtsUCharVec, mtsUInt, mtsUInt1, mtsUInt2, mtsUInt3, mtsUInt4, mtsUInt5, mtsUInt6, mtsUIntMat, mtsUIntVec, mtsULong, mtsULongMat, mtsULongVec, mtsUShort, mtsUShortMat, mtsUShortVec, mtsVct1, mtsVct2, mtsVct2x2, mtsVct3, mtsVct3x3, mtsVct4, mtsVct4x4, mtsVct5, mtsVct6, mtsVct7, mtsVct8, mtsVct9, mtsVctBool1, mtsVctBool2, mtsVctBool3, mtsVctBool4, mtsVctBool5, mtsVctBool6, mtsVctBool7, mtsVctBool8, mtsVctBool9, mtsVctBoolVec, mtsVctChar1, mtsVctChar2, mtsVctChar3, mtsVctChar4, mtsVctChar5, mtsVctChar6, mtsVctChar7, mtsVctChar8, mtsVctChar9, mtsVctCharVec, mtsVctDoubleMat, mtsVctDoubleVec, mtsVctFloat1, mtsVctFloat2, mtsVctFloat3, mtsVctFloat4, mtsVctFloat5, mtsVctFloat6, mtsVctFloat7, mtsVctFloat8, mtsVctFloat9, mtsVctFloatMat, mtsVctFloatVec, mtsVctFrm3, mtsVctFrm4x4, mtsVctInt1, mtsVctInt2, mtsVctInt3, mtsVctInt4, mtsVctInt5, mtsVctInt6, mtsVctInt7, mtsVctInt8, mtsVctInt9, mtsVctIntMat, mtsVctIntVec, mtsVctLong1, mtsVctLong2, mtsVctLong3, mtsVctLong4, mtsVctLong5, mtsVctLong6, mtsVctLong7, mtsVctLong8, mtsVctLong9, mtsVctLongVec, mtsVctMatRot3, mtsVctShort1, mtsVctShort2, mtsVctShort3, mtsVctShort4, mtsVctShort5, mtsVctShort6, mtsVctShort7, mtsVctShort8, mtsVctShort9, mtsVctShortVec, mtsVctUChar1, mtsVctUChar2, mtsVctUChar3, mtsVctUChar4, mtsVctUChar5, mtsVctUChar6, mtsVctUChar7, mtsVctUChar8, mtsVctUChar9, mtsVctUCharVec, mtsVctUInt1, mtsVctUInt2, mtsVctUInt3, mtsVctUInt4, mtsVctUInt5, mtsVctUInt6, mtsVctUInt7, mtsVctUInt8, mtsVctUInt9, mtsVctUIntVec, mtsVctULong1, mtsVctULong2, mtsVctULong3, mtsVctULong4, mtsVctULong5, mtsVctULong6, mtsVctULong7, mtsVctULong8, mtsVctULong9, mtsVctULongVec, mtsVctUShort1, mtsVctUShort2, mtsVctUShort3, mtsVctUShort4, mtsVctUShort5, mtsVctUShort6, mtsVctUShort7, mtsVctUShort8, mtsVctUShort9, mtsVctUShortVec, mtsWatchdogClient, mtsWatchdogServer, osaSerialPort, osaSocket, osaSocketServer, osaTimeServer, prmActuatorJointCouplingProxy, prmActuatorParameters, prmActuatorState, prmCartesianImpedanceGains, prmCartesianImpedanceGainsProxy, prmEventButton, prmEventButtonQtWidgetComponent, prmForceCartesianGet, prmForceCartesianSet, prmForceTorqueJointSet, prmGainParameters, prmIMUSensors, prmIMUSensorsProxy, prmInputData, prmInputDataProxy, prmJointTypeProxy, prmKeyValueProxy, prmMaskedBoolVec, prmMaskedCharVec, prmMaskedDoubleVec, prmMaskedFloatVec, prmMaskedIntVec, prmMaskedLongVec, prmMaskedShortVec, prmMaskedUCharVec, prmMaskedUIntVec, prmMaskedULongVec, prmMaskedUShortVec, prmOperatingState, prmOperatingStateProxy, prmPositionCartesianGet, prmPositionCartesianGetProxy, prmPositionCartesianSet, prmPositionJointGet, prmPositionJointGetProxy, prmPositionJointSet, prmPositionJointSetProxy, prmRobotState, prmStateJoint, prmStateJointProxy, prmStateRobotQtWidgetComponent, prmTransformationBase, prmTransformationDynamic, prmTransformationFixed, prmTransformationManager, prmVelocityCartesianGet, prmVelocityCartesianGetProxy, prmVelocityCartesianSet, prmVelocityJointGet, prmVelocityJointSet, socketCommandPSMProxy, socketHeaderProxy, socketMessagesProxy, socketStatePSMProxy, 
+M- Class cmnLogger: SetMaskFunction: function mask set to "  "

@@ -88,7 +88,7 @@
          </Encoder>
          <AnalogIn>
             <BitsToVolts Offset="0" Scale="6.86646e-05"/>
-            <VoltsToPosSI Offset="-121.730613" Scale="79.3570434054"/>
+            <VoltsToPosSI Offset="-138.730613" Scale="79.3570434054"/>
          </AnalogIn>
       </Actuator>
       <Actuator ActuatorID="5" AxisID="1" BoardID="3" Type="Revolute">
