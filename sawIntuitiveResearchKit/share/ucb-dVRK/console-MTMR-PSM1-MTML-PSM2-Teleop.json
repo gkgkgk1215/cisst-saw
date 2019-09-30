@@ -26,7 +26,7 @@
         {
             "name": "MTMR",
             "type": "MTM",
-            "io": "sawRobotIO1394-MTMR-32036-footpedal.xml",
+            "io": "sawRobotIO1394-MTMR-32036-footpedal.xml-new",
             "pid": "../sawControllersPID-MTMR.xml",
             "kinematic": "../mtm.json"
         }
@@ -34,7 +34,7 @@
         {
             "name": "MTML",
             "type": "MTM",
-            "io": "sawRobotIO1394-MTML-31976-calibrated.xml",
+            "io": "sawRobotIO1394-MTML-31976-calibrated.xml-new",
             "pid": "../sawControllersPID-MTML.xml",
             "kinematic": "../mtm.json"
         }
