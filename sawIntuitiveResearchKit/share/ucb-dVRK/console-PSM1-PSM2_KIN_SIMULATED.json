@@ -7,7 +7,7 @@
             "type": "PSM",
             "simulation": "KINEMATIC",
             "pid": "sawControllersPID-PSM.xml",
-            "kinematic": "psm-large-needle-driver.json"
+            "kinematic": "psm-large-needle-driver-tip.json"
         }
         ,
         {
@@ -15,7 +15,7 @@
             "type": "PSM",
             "simulation": "KINEMATIC",
             "pid": "sawControllersPID-PSM.xml",
-            "kinematic": "psm-large-needle-driver.json"
+            "kinematic": "psm-large-needle-driver-tip.json"
         }
     ]
 }
